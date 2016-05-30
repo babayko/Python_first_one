@@ -21,7 +21,7 @@ ws = wb.add_sheet('IP LIST', cell_overwrite_ok=True)
 for index, width in enumerate(widths):
     ws.col(index).width = WIDTH_CONST * width
 # writing first row
-for index, header in enumerate(header):
+for index, header in enumerate(headers):
     ws.write(0, index, header)
 
 #create counter
