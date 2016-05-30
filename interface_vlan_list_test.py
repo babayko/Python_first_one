@@ -32,7 +32,7 @@ ws.write(0, 7, 'summary(testing purpose)')
 i = 1
 
 def search():
-    #w/o it countet don't work inside function
+    #w/o this thing counter do not work inside function
     global i
     #trying to find hostname of the device
     hostname = re.findall(r"\nhostname.([\S\s].*)\n", some_str)
