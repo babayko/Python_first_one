@@ -5,29 +5,25 @@ from os import listdir
 import xlrd
 import xlwt
 
-listFF = listdir('C:/python/configs/')
-#create excel workbook with write permissions (xlwt module)
-wb = xlwt.Workbook()
-#create sheet IP LIST with cell overwrite rights
-ws = wb.add_sheet('IP LIST', cell_overwrite_ok=True)
-#writing first row
-ws.col(0).width = 256 * 50
-ws.col(1).width = 256 * 27
-ws.col(2).width = 256 * 30
-ws.col(3).width = 256 * 50
-ws.col(4).width = 256 * 36
-ws.col(5).width = 256 * 20
-ws.col(6).width = 256 * 20
-ws.col(7).width = 256 * 20
 
-ws.write(0, 0, 'FileName')
-ws.write(0, 1, 'Hostname')
-ws.write(0, 2, 'Interface Number')
-ws.write(0, 3, 'Description/Nameif')
-ws.write(0, 4, 'IP address')
-ws.write(0, 5, 'cdp')
-ws.write(0, 6, 'static route')
-ws.write(0, 7, 'summary(testing purpose)')
+width_ratio = 256
+widths = 50, 27, 30, 50, 36, 20, 20, 20
+headers = (
+    'FileName', 'Hostname', 'Interface Number', 'Description/Nameif', 'IP address',
+    'cdp', 'static route', 'summary(testing purpose)')
+
+listFF = listdir('C:/python/configs/')
+# create excel workbook with write permissions (xlwt module)
+wb = xlwt.Workbook()
+# create sheet IP LIST with cell overwrite rights
+ws = wb.add_sheet('IP LIST', cell_overwrite_ok=True)
+# set width
+for index, width in enumerate(widths):
+    ws.col(index).width = WIDTH_CONST * width
+# writing first row
+for index, header in enumerate(header):
+    ws.write(0, index, header)
+
 #create counter
 i = 1
 
@@ -107,8 +103,6 @@ def search():
     
 for file in listFF:
    f = open('C:/python/configs//{0}'.format(file), 'r+')
-   str
-   type(str)
    some_str = f.read()
    print(i, file)
    #write filename in first column
