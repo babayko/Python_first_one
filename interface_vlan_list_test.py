@@ -6,7 +6,7 @@ import xlrd
 import xlwt
 
 
-width_ratio = 256
+WIDTH_CONST = 256
 widths = 50, 27, 30, 50, 36, 20, 20, 20
 headers = (
     'FileName', 'Hostname', 'Interface Number', 'Description/Nameif', 'IP address',
