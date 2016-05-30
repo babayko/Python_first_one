@@ -6,7 +6,7 @@ import xlrd
 import xlwt
 
 
-WIDTH_CONST = 256
+width_ratio = 256
 widths = 50, 27, 30, 50, 36, 20, 20, 20
 headers = (
     'FileName', 'Hostname', 'Interface Number', 'Description/Nameif', 'IP address',
@@ -19,7 +19,7 @@ wb = xlwt.Workbook()
 ws = wb.add_sheet('IP LIST', cell_overwrite_ok=True)
 # set width
 for index, width in enumerate(widths):
-    ws.col(index).width = WIDTH_CONST * width
+    ws.col(index).width = width_ratio * width
 # writing first row
 for index, header in enumerate(header):
     ws.write(0, index, header)
