@@ -78,7 +78,11 @@ def search():
         # trying to find Cisco ASA interface description (nameif)
         interface_asa = re.findall(r"([\S\s]*)\nnameif", item_str)
         #if something is found then convert to string and write to excel
+<<<<<<< HEAD
         if interface_asa != []:             
+=======
+        if interface_asa != []:            	
+>>>>>>> 34adb11369ee266b8a54b62b116667e7d9516cc0
             interface_asa_str = ''.join(interface_asa)                
             ws.write(i, 2, interface_asa_str)
         #trying to find Cisco switch/router/industrial switch interface description
